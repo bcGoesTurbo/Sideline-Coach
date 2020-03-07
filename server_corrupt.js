@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const app = express();
 const mongoose = require("mongoose");
 
@@ -9,9 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
-//     app.use(express.static("client/build"));
-// }
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/SidelineCoach",
     {
@@ -31,27 +31,10 @@ const playerRoutes = require ('./routes/player');
 // app.use('/bball', bballRouter);
 app.use('/player', playerRoutes);
 
-// var Schema = mongoose.Schema;
 
-// var playerSchema = new Schema ({
-//     playerName: String,
-//     playerNumber: Number
-// });
-
-// var PlayerList = mongoose.model("PlayerList", playerSchema);
-
-// var PlayerListOne = new PlayerList ({
-//     playerName: "Andrew",
-//     playerNumber: 4
-// });
-
-// PlayerListOne.save(function(error) {
-//     console.log("Your player has been saved!");
-//     if(error) {
-//         console.error(error);
-//     }
-// });
 
 app.listen(PORT, () => {
-    console.log(` ==> API server now on port ${PORT}!`);
+    console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
+
+

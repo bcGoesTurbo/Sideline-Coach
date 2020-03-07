@@ -5,15 +5,14 @@ const Schema = mongoose.Schema;
 const playerSchema = new Schema({
     playername: { type: String, required: true, unique: true, trim: true, }, 
     playernumber: { type: Number, required: true, unique: true },
-    score: { type: Number, required: true },
-    team: { type: String, required: true },
+    // score: { type: Number, required: true },
+    team: { type: String },
     // date: { type: Date, required: true }
     // game_id: Schema.Types.ObjectId
 }, 
-{ timestamps: true, });
+{ collection: 'player' });
 
-const Player = mongoose.model("Player", playerSchema);
+module.exports = mongoose.model("Player", playerSchema);
 
 
 
-module.exports = Player;

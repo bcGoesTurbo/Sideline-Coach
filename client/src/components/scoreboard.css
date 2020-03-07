@@ -5,6 +5,9 @@ body {
     flex-direction: column;
     color: white;
   }
+  /* .scoreboard_container {
+    border: 10px solid black;
+  } */
   
   h1 {
     text-align: center;

@@ -4,25 +4,9 @@ const playerRoutes = express.Router();
 // Require Player model in our routes module
 let Player = require("../models/player.model");
 
-// var andrew = new Player;
-// andrew.playername = "Andrew";
-// andrew.playernumber = 4;
-// andrew.score = 12;
-// andrew.team = "Red Dragons";
-// andrew.date = 
-
-// Defined store route
 playerRoutes.route("/add").post((req, res) => {
-  const player = new Player(req.body);
-  /*
-    {
-        playername: "Andrew",
-        playernumber: 4,
-        ...
-    }
-  */
-  player
-    .save()
+  let player = new Player(req.body);
+  player.save()
     .then(player => {
       res.status(200).json({ player: "player added successfully" });
     })
@@ -31,11 +15,11 @@ playerRoutes.route("/add").post((req, res) => {
 
 // Defined get data route
 playerRoutes.route("/").get(function(req, res) {
-  Player.find(function(err, players) {
+  Player.find(function(err, player) {
     if (err) {
       console.log(err);
     } else {
-      res.json(players);
+      res.json(player);
     }
   });
 });
@@ -55,8 +39,7 @@ playerRoutes.route('/update/:id').post(function (req, res) {
       res.status(404).send("data is not found");
     else {
         player.playername = req.body.playername;
-        player.number = req.body.playernumber;
-        player.score = req.body.score;
+        player.playernumber = req.body.playernumber;
         player.team = req.body.team;
 
         player.save().then(player => {
@@ -66,6 +49,14 @@ playerRoutes.route('/update/:id').post(function (req, res) {
             res.status(400).send("unable to update the database");
       });
     }
+  });
+});
+
+// Defined delete | remove | destroy route
+playerRoutes.route('/delete/:id').get(function (req, res) {
+  Player.findByIdAndRemove({_id: req.params.id}, function(err, player){
+      if(err) res.json(err);
+      else res.json('Successfully removed');
   });
 });
 
