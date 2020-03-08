@@ -14,53 +14,54 @@ class CreatePlayer extends Component {
     this.onChangePlayerNumber = this.onChangePlayerNumber.bind(this);
     // this.onChangeScore = this.onChangeScore.bind(this);
     this.onChangeTeam = this.onChangeTeam.bind(this);
+    this.onChangeTeamID = this.onChangeTeamID.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      playername: "",
-      playernumber: "",
-      // score:'',
-      team: ""
-      // date:''
+      player_name: "",
+      player_number: "",
+      team_name: "",
+      teamID: ""
     };
   }
   onChangePlayerName(e) {
     this.setState({
-      playername: e.target.value
+      player_name: e.target.value
     });
   }
   onChangePlayerNumber(e) {
     this.setState({
-      playernumber: e.target.value
+      player_number: e.target.value
     });
   }
-  // onChangeScore(e) {
-  //   this.setState({
-  //     score: e.target.value
-  //   })
-  // }
   onChangeTeam(e) {
     this.setState({
-      team: e.target.value
+      team_name: e.target.value
+    });
+  }
+  onChangeTeamID(e) {
+    this.setState({
+      teamID: e.target.value
     });
   }
 
   onSubmit(e) {
     e.preventDefault();
     const obj = {
-      playername: this.state.playername,
-      playernumber: this.state.playernumber,
-      team: this.state.team
+      player_name: this.state.player_name,
+      player_number: this.state.player_number,
+      team_name: this.state.team_name,
+      teamID: this.state.teamID
     };
     axios
       .post("http://localhost:3000/player/add", obj)
       .then(res => console.log(res.data));
 
     this.setState({
-      playername: "",
-      playernumber: "",
-      // score: '',
-      team: ""
+      player_name: "",
+      player_number: "",
+      team_name: "",
+      teamID: ""
     });
   }
 
@@ -77,7 +78,7 @@ class CreatePlayer extends Component {
                   <input
                     type="text"
                     className="form-control"
-                    value={this.state.playername}
+                    value={this.state.player_name}
                     onChange={this.onChangePlayerName}
                   />
                 </div>
@@ -86,7 +87,7 @@ class CreatePlayer extends Component {
                   <input
                     type="text"
                     className="form-control"
-                    value={this.state.playernumber}
+                    value={this.state.player_number}
                     onChange={this.onChangePlayerNumber}
                   />
                 </div>
@@ -95,8 +96,17 @@ class CreatePlayer extends Component {
                   <input
                     type="text"
                     className="form-control"
-                    value={this.state.team}
+                    value={this.state.team_name}
                     onChange={this.onChangeTeam}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Home or Away Team: </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={this.state.teamID}
+                    onChange={this.onChangeTeamID}
                   />
                 </div>
                 <div className="form-group">

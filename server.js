@@ -31,26 +31,6 @@ const playerRoutes = require ('./routes/player');
 // app.use('/bball', bballRouter);
 app.use('/player', playerRoutes);
 
-// var Schema = mongoose.Schema;
-
-// var playerSchema = new Schema ({
-//     playerName: String,
-//     playerNumber: Number
-// });
-
-// var PlayerList = mongoose.model("PlayerList", playerSchema);
-
-// var PlayerListOne = new PlayerList ({
-//     playerName: "Andrew",
-//     playerNumber: 4
-// });
-
-// PlayerListOne.save(function(error) {
-//     console.log("Your player has been saved!");
-//     if(error) {
-//         console.error(error);
-//     }
-// });
 
 app.listen(PORT, () => {
     console.log(` ==> API server now on port ${PORT}!`);

@@ -15,9 +15,10 @@ class TableRow extends Component {
   render() {
     return (
       <tr>
-        <td>{this.props.obj.playername}</td>
-        <td>{this.props.obj.playernumber}</td>
-        <td>{this.props.obj.team}</td>
+        <td>{this.props.obj.player_name}</td>
+        <td>{this.props.obj.player_number}</td>
+        <td>{this.props.obj.team_name}</td>
+        <td>{this.props.obj.teamID}</td>
         
         <td>
             <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary"> Edit </Link>

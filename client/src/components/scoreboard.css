@@ -56,13 +56,13 @@ body {
   .home {
     position: absolute;
     left: 70px;
-    top: 10px;
+    top: 50px;
   }
   
   .away {
     position: absolute;
     right: 80px;
-    top: 10px;
+    top: 50px;
   }
   
   .div_line_away, .div_line_home {

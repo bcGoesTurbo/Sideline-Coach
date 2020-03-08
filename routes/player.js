@@ -38,9 +38,10 @@ playerRoutes.route('/update/:id').post(function (req, res) {
     if (!player)
       res.status(404).send("data is not found");
     else {
-        player.playername = req.body.playername;
-        player.playernumber = req.body.playernumber;
-        player.team = req.body.team;
+        player.player_name = req.body.player_name;
+        player.player_number = req.body.player_number;
+        player.team_name = req.body.team_name;
+        player.teamID = req.body.teamID;
 
         player.save().then(player => {
           res.json('Update complete');

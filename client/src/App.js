@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import CreatePlayer from './components/createplayer.component';
 import EditPlayer from './components/editplayer.component';
 import Index from './components/index.component';
-// import Scoreboard from './components/scoreboard.component';
+import Scoreboard from './components/scoreboard.component';
+
 
 class App extends Component {
   render() {
@@ -16,9 +17,9 @@ class App extends Component {
             <Link to={'/'} className="navbar-brand">Sideline Coach</Link>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
-              {/* <li className="nav-item">
+              <li className="nav-item">
                   <Link to={'/scoreboard'} className="nav-link">Scoreboard</Link>
-                </li> */}
+                </li>
                 <li className="nav-item">
                   <Link to={'/createplayer'} className="nav-link">Create Player</Link>
                 </li>
@@ -33,7 +34,7 @@ class App extends Component {
               <Route exact path='/createplayer' component={ CreatePlayer } />
               <Route path='/editplayer/:id' component={ EditPlayer } />
               <Route path='/index' component={ Index } />
-              {/* <Route path='/scoreboard' component={ Scoreboard } /> */}
+              <Route path='/scoreboard' component={ Scoreboard } />
           </Switch>
         </div>
       </Router>

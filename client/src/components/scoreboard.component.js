@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import "./scoreboard.css";
+// import "./scoreboard.css";
+
+import 'bootstrap/scss/bootstrap.scss';
+
+import { Container } from "react-bootstrap-grid-component/dist/Container";
+import { Column } from "react-bootstrap-grid-component/dist/Column";
+import { Row } from "react-bootstrap-grid-component/dist/Row";
 
 class ScoreBoard extends Component {
   constructor(props) {
@@ -69,79 +75,110 @@ class ScoreBoard extends Component {
 
   render() {
     return (
-      <div className="scoreboard_container">
-        <div className="scoreboard">
-          <div className="inner_border"></div>
-          <div className="inner_rect"></div>
-          <div className="rim"></div>
-          <div className="net1"></div>
-          <div className="net2"></div>
-          <div className="net3"></div>
-          <div className="net4"></div>
-          <div className="net5"></div>
-          <div className="net6"></div>
-          <div className="net7"></div>
-          <div className="net8"></div>
-          <div className="net9"></div>
-          <h4 className="home">HOME</h4>
-          <div className="div_line_home"></div>
-          <div className="score_container_home"></div>
-          <div className="score_container_home">{this.state.homeScore}</div>
-          <div>
-            {/* <button onClick={this.addOneHome}>+1</button> */}
-            <a className="add_button home1" onClick={this.addOneHome}>
-              +1
-            </a>
-          </div>
-          <div>
-            <a className="add_button home2" onClick={() => this.addTwoHome()}>
-              +2
-            </a>
-          </div>
-          <div>
-            <a className="add_button home3" onClick={() => this.addThreeHome()}>
-              +3
-            </a>
-          </div>
-          <div>
-            <a
-              className="minus_button home-subtract1"
-              onClick={() => this.minusOneHome()}
-            >
-              -1
-            </a>
-          </div>
-          <h4 className="away">AWAY</h4>
-          <div className="div_line_away"></div>
-          <div className="score_container_away">{this.state.awayScore}</div>
-          <div>
-            <a className="add_button away1" onClick={() => this.addOneAway()}>
-              +1
-            </a>
-          </div>
-          <div>
-            <a className="add_button away2" onClick={() => this.addTwoAway()}>
-              +2
-            </a>
-          </div>
-          <div>
-            <a className="add_button away3" onClick={() => this.addThreeAway()}>
-              +3
-            </a>
-          </div>
-          <div>
-            <a
-              className="minus_button away-subtract2"
-              onClick={() => this.minusOneAway()}
-            >
-              -1
-            </a>
-          </div>
-          <a className="reset" onClick={this.resetScore.bind(this)}>
-            NEW GAME
-          </a>
-        </div>
-      </div>
+      <Container>
+        <Row>
+          <Column xs="2">One of three columns</Column>
+
+          <Column xs="10">
+            <div className="scoreboard_container">
+              <div className="scoreboard">
+                <div className="inner_border"></div>
+                <div className="inner_rect"></div>
+                <div className="rim"></div>
+                <div className="net1"></div>
+                <div className="net2"></div>
+                <div className="net3"></div>
+                <div className="net4"></div>
+                <div className="net5"></div>
+                <div className="net6"></div>
+                <div className="net7"></div>
+                <div className="net8"></div>
+                <div className="net9"></div>
+                <h4 className="home">HOME</h4>
+                <div className="div_line_home"></div>
+                <div className="score_container_home"></div>
+                <div className="score_container_home">
+                  {this.state.homeScore}
+                </div>
+                <div>
+                  {/* <button onClick={this.addOneHome}>+1</button> */}
+                  <a
+                    className="add_button home1"
+                    onClick={() => this.addOneHome()}
+                  >
+                    +1
+                  </a>
+                </div>
+                <div>
+                  <a
+                    className="add_button home2"
+                    onClick={() => this.addTwoHome()}
+                  >
+                    +2
+                  </a>
+                </div>
+                <div>
+                  <a
+                    className="add_button home3"
+                    onClick={() => this.addThreeHome()}
+                  >
+                    +3
+                  </a>
+                </div>
+                <div>
+                  <a
+                    className="minus_button home-subtract1"
+                    onClick={() => this.minusOneHome()}
+                  >
+                    -1
+                  </a>
+                </div>
+                <h4 className="away">AWAY</h4>
+                <div className="div_line_away"></div>
+                <div className="score_container_away">
+                  {this.state.awayScore}
+                </div>
+                <div>
+                  <a
+                    className="add_button away1"
+                    onClick={() => this.addOneAway()}
+                  >
+                    +1
+                  </a>
+                </div>
+                <div>
+                  <a
+                    className="add_button away2"
+                    onClick={() => this.addTwoAway()}
+                  >
+                    +2
+                  </a>
+                </div>
+                <div>
+                  <a
+                    className="add_button away3"
+                    onClick={() => this.addThreeAway()}
+                  >
+                    +3
+                  </a>
+                </div>
+                <div>
+                  <a
+                    className="minus_button away-subtract2"
+                    onClick={() => this.minusOneAway()}
+                  >
+                    -1
+                  </a>
+                </div>
+                <a className="reset" onClick={this.resetScore.bind(this)}>
+                  NEW GAME
+                </a>
+              </div>
+            </div>
+          </Column>
+          <Column xs="2">Three of three columns</Column>
+        </Row>
+      </Container>
     );
   }
 }
