@@ -177,7 +177,7 @@ Player.propTypes = {
     onRemove: PropTypes.func.isRequired
 };
 
-var Scoring = createClass({
+var Scoring = React.createClass({
   propTypes: {
     title: PropTypes.string,
     initialPlayers: PropTypes.arrayOf(PropTypes.shape({

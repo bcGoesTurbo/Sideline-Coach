@@ -1,7 +1,7 @@
-import HomeTeam from './HomeTeam';
-import AwayTeam from './AwayTeam';
-import Scoreboard from './Scoreboard';
+// import HomeTeam from './HomeTeam';
+// import AwayTeam from './AwayTeam';
+// import Scoreboard from './Scoreboard';
 
-export {
-    HomeTeam, Scoreboard, AwayTeam
-}
+// export {
+//     HomeTeam, Scoreboard, AwayTeam
+// }

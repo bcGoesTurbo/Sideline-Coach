@@ -175,10 +175,10 @@ class ScoreBoard extends Component {
                 </a>
               </div>
             </div>
-          </Column>
-          <Column xs="2">Three of three columns</Column>
-        </Row>
-      </Container>
+           </Column>
+           <Column xs="2">Three of three columns</Column>
+         </Row>
+       </Container>
     );
   }
 }

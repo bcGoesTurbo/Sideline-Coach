@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import CreatePlayer from './components/createplayer.component';
 import EditPlayer from './components/editplayer.component';
 import Index from './components/index.component';
 import Scoreboard from './components/scoreboard.component';
+// import Scoring from'./components/Layouts/Scoreboard';
 
 
 class App extends Component {
