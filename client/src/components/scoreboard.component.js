@@ -59,13 +59,13 @@ export default class Index extends Component {
           <Column md="5">
             <tr>
             {/* {this.totalPoints()} */}
-              <h3 align="center">Home Team</h3>
+              <h3 class="text-white" align="center">Home Team</h3>
               
-              <h5 align="center">Red Dragons</h5>{" "}
+              <h5 class="text-white" align="center">Red Dragons</h5>{" "}
               {/*Dynamically add Team Name here  */}
             </tr>
             <table
-              className="table table-striped table-bordered table-sm"
+              className="table table-striped table-bordered table-sm table-dark"
               style={{ marginTop: 20 }}
             >
               <thead>
@@ -85,16 +85,16 @@ export default class Index extends Component {
           <Column md="2">
 
             <h1 align="center"> 0 : 0</h1>
-            <br />
+            
             <tr align="center"><Timer /></tr>
 
           </Column>
           <Column md="5">
-            <h3 align="center">Away Team</h3>
-            <h5  align="center">Chicago Bulls</h5>{" "}
+            <h3 class="text-white" align="center">Away Team</h3>
+            <h5  class="text-white" align="center">Chicago Bulls</h5>{" "}
             {/*Dynamically add Team Name here  */}
             <table
-              className="table table-striped table-bordered table-sm "
+              className="table table-striped table-bordered table-sm table-dark"
               style={{ marginTop: 20 }}
             >
               <thead>

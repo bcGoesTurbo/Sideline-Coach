@@ -18,7 +18,7 @@ class App extends Component {
       <Router>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to={'/home'} className="navbar-brand">Sideline Coach</Link>
+            <Link to={'/'} className="navbar-brand">Sideline Coach</Link>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
               
@@ -36,7 +36,7 @@ class App extends Component {
               <Route exact path='/createplayer' component={ CreatePlayer } />
               <Route path='/editplayer/:id' component={ EditPlayer } />
               <Route path='/scoreboard' component={ Scoreboard } />
-              <Route path='/home' component={Home} />
+              <Route path='/' component={Home} />
           </Switch>
         </div>
       </Router>

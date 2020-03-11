@@ -71,9 +71,9 @@ class CreatePlayer extends Component {
         <Row>
           <Column md={6}>
             <div style={{ marginTop: 10 }}>
-              <h3 >Add New Player</h3>
+              <h3 class="text-white">Add New Player</h3>
               <form onSubmit={this.onSubmit}>
-                <div className="form-group">
+                <div className="form-group text-white">
                   <label>Player Name: </label>
                   <input
                     type="text"
@@ -82,11 +82,11 @@ class CreatePlayer extends Component {
                     onChange={this.onChangePlayerName}
                   />
                 </div>
-                <div className="form-group ">
+                <div className="form-group text-white">
                   <label>Player Number: </label>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control "
                     value={this.state.player_number}
                     onChange={this.onChangePlayerNumber}
                   />
@@ -100,11 +100,11 @@ class CreatePlayer extends Component {
                     onChange={this.onChangeTeam}
                   />
                 </div> */}
-                <div className="form-group">
+                <div className="form-group text-white">
                   <label>Home or Away Team: </label>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control "
                     value={this.state.teamID}
                     onChange={this.onChangeTeamID}
                   />

@@ -61,7 +61,7 @@ class Timer extends React.Component {
 
     return (
       <div>
-        <h3>Stop Clock: {this.state.time}</h3>
+        <h3 className="text-white">Stop Clock: {this.state.time}</h3>
         {start}
         {resume}
         {stop}
