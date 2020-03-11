@@ -13,14 +13,14 @@ class CreatePlayer extends Component {
     this.onChangePlayerName = this.onChangePlayerName.bind(this);
     this.onChangePlayerNumber = this.onChangePlayerNumber.bind(this);
     // this.onChangeScore = this.onChangeScore.bind(this);
-    this.onChangeTeam = this.onChangeTeam.bind(this);
+    // this.onChangeTeam = this.onChangeTeam.bind(this);
     this.onChangeTeamID = this.onChangeTeamID.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       player_name: "",
       player_number: "",
-      team_name: "",
+      // team_name: "",
       teamID: ""
     };
   }
@@ -34,11 +34,11 @@ class CreatePlayer extends Component {
       player_number: e.target.value
     });
   }
-  onChangeTeam(e) {
-    this.setState({
-      team_name: e.target.value
-    });
-  }
+  // onChangeTeam(e) {
+  //   this.setState({
+  //     team_name: e.target.value
+  //   });
+  // }
   onChangeTeamID(e) {
     this.setState({
       teamID: e.target.value
@@ -50,7 +50,7 @@ class CreatePlayer extends Component {
     const obj = {
       player_name: this.state.player_name,
       player_number: this.state.player_number,
-      team_name: this.state.team_name,
+      // team_name: this.state.team_name,
       teamID: this.state.teamID
     };
     axios
@@ -60,7 +60,7 @@ class CreatePlayer extends Component {
     this.setState({
       player_name: "",
       player_number: "",
-      team_name: "",
+      // team_name: "",
       teamID: ""
     });
   }
@@ -69,9 +69,9 @@ class CreatePlayer extends Component {
     return (
       <Container>
         <Row>
-          <Column md={3}>
+          <Column md={6}>
             <div style={{ marginTop: 10 }}>
-              <h3>Add New Player</h3>
+              <h3 >Add New Player</h3>
               <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                   <label>Player Name: </label>
@@ -82,7 +82,7 @@ class CreatePlayer extends Component {
                     onChange={this.onChangePlayerName}
                   />
                 </div>
-                <div className="form-group">
+                <div className="form-group ">
                   <label>Player Number: </label>
                   <input
                     type="text"
@@ -91,7 +91,7 @@ class CreatePlayer extends Component {
                     onChange={this.onChangePlayerNumber}
                   />
                 </div>
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label>Team Name: </label>
                   <input
                     type="text"
@@ -99,7 +99,7 @@ class CreatePlayer extends Component {
                     value={this.state.team_name}
                     onChange={this.onChangeTeam}
                   />
-                </div>
+                </div> */}
                 <div className="form-group">
                   <label>Home or Away Team: </label>
                   <input
@@ -113,14 +113,14 @@ class CreatePlayer extends Component {
                   <input
                     type="submit"
                     value="Add Player"
-                    className="btn btn-primary"
+                    className="btn bg-dark text-white"
                   />
                 </div>
               </form>
             </div>
           </Column>
-          <Column md={6}>One of three columns</Column>
-          <Column md={3}>One of three columns</Column>
+          {/* {/* <Column md={6}>One of three columns</Column> */}
+          <Column md={6}> </Column> 
         </Row>
       </Container>
     );
